@@ -11,10 +11,19 @@ var AppComponent = (function () {
         //[]: attribute binding
         //(): event binding
         this.name = 'Angular';
-        this.textColor = 'blue';
+        this.textColor = 'green';
+        this.customers = [
+            { id: 1, name: 'Ward' },
+            { id: 2, name: 'Kevin' },
+            { id: 3, name: 'Eric' },
+            { id: 4, name: 'Sally' },
+            { id: 5, name: 'Bob' },
+            { id: 6, name: 'David' },
+            { id: 7, name: 'Nancy' }
+        ];
     }
     AppComponent.prototype.changeTextColor = function () {
-        this.textColor = this.textColor === 'blue' ? 'red' : 'blue';
+        this.textColor = this.textColor === 'green' ? 'red' : 'blue';
     };
     ;
     return AppComponent;
@@ -22,7 +31,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: 'app/app.component.html'
+        templateUrl: 'app/app.component.html',
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
