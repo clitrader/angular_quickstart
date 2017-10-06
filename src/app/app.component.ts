@@ -2,9 +2,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,  // Used to simply templateUrl path across different folders
+  moduleId: module.id,  // Used to simplify templateUrl path across different folders
   selector: 'my-app',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
 })
 export class AppComponent  {
   // []: attribute binding
