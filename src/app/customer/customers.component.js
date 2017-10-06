@@ -8,25 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var customer_service_1 = require("./customer.service");
+// import { CustomerComponent } from './../customer/customer.component';
 var core_1 = require("@angular/core");
-var CustomerComponent = (function () {
-    function CustomerComponent() {
-        this.textColor2 = 'grey';
+var CustomersComponent = (function () {
+    function CustomersComponent(_customerService) {
+        this._customerService = _customerService;
     }
-    CustomerComponent.prototype.ngOnInit = function () { };
-    return CustomerComponent;
+    CustomersComponent.prototype.ngOnInit = function () {
+        this.customers = this._customerService.getCustomers();
+    };
+    return CustomersComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], CustomerComponent.prototype, "customer", void 0);
-CustomerComponent = __decorate([
+CustomersComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'my-customer',
-        templateUrl: 'customer.component.html'
+        selector: 'my-customers',
+        templateUrl: 'customers.component.html',
+        providers: [customer_service_1.CustomerService]
     }),
-    __metadata("design:paramtypes", [])
-], CustomerComponent);
-exports.CustomerComponent = CustomerComponent;
-//# sourceMappingURL=customer.component.js.map
+    __metadata("design:paramtypes", [customer_service_1.CustomerService])
+], CustomersComponent);
+exports.CustomersComponent = CustomersComponent;
+//# sourceMappingURL=customers.component.js.map

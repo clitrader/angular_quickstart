@@ -5,33 +5,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+// import { CustomerComponent } from './customer/customer.component';
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        //[]: attribute binding
-        //(): event binding
+        // []: attribute binding
+        // (): event binding
         this.name = 'Angular';
         this.textColor = 'green';
-        this.customers = [
-            { id: 1, name: 'Ward' },
-            { id: 2, name: 'Kevin' },
-            { id: 3, name: 'Eric' },
-            { id: 4, name: 'Sally' },
-            { id: 5, name: 'Bob' },
-            { id: 6, name: 'David' },
-            { id: 7, name: 'Nancy' }
-        ];
     }
     AppComponent.prototype.changeTextColor = function () {
-        this.textColor = this.textColor === 'green' ? 'red' : 'blue';
+        this.textColor = this.textColor === 'green' ? 'red' : 'green';
     };
     ;
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'my-app',
-        templateUrl: 'app/app.component.html',
+        templateUrl: 'app.component.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

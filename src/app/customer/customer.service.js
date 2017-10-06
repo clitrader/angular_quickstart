@@ -9,22 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var CustomerComponent = (function () {
-    function CustomerComponent() {
+var CustomerService = (function () {
+    function CustomerService() {
     }
-    CustomerComponent.prototype.ngOnInit = function () { };
-    return CustomerComponent;
+    CustomerService.prototype.getCustomers = function () {
+        return [
+            { id: 1, name: 'Ward' },
+            { id: 2, name: 'Kevin' },
+            { id: 3, name: 'Eric' },
+            { id: 4, name: 'Sally' },
+            { id: 5, name: 'Bob' },
+            { id: 6, name: 'David' },
+            { id: 7, name: 'Nancy' }
+        ];
+    };
+    return CustomerService;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], CustomerComponent.prototype, "customer", void 0);
-CustomerComponent = __decorate([
-    core_1.Component({
-        selector: 'my-customer',
-        templateUrl: 'app/customer/customer.component.html'
-    }),
+CustomerService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], CustomerComponent);
-exports.CustomerComponent = CustomerComponent;
-//# sourceMappingURL=customer.component.js.map
+], CustomerService);
+exports.CustomerService = CustomerService;
+//# sourceMappingURL=customer.service.js.map

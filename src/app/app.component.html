@@ -6,9 +6,8 @@ Hello, what's your {{name}}
 <input type = "text" [(ngModel)]="name">
 <button (click)="changeTextColor()"> Change Text Color </button>
 
-<ul>
-    <li *ngFor = "let c of customers ">
-        <my-customer [customer] = "c"></my-customer>
+<my-customers></my-customers>
 
-    </li>
-</ul>
+<my-customers></my-customers> 
+<my-customers></my-customers>             
+<my-customers></my-customers>
