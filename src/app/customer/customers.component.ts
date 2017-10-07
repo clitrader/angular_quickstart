@@ -19,14 +19,20 @@ export class CustomersComponent implements OnInit {
 
     ngOnInit() {
 
-        // any[]: use array when you need to manipulate the data
-        this._customerService.getCustomers()
-        .then((customers) => this.customers = customers)
-        .catch((err) => {
-        console.log(err);
-    });
+        // Rx Observable with subscribe
+        this._customerService.getCustomers_RxObservable()
+        .subscribe((customers) => this.customers = customers, 
+            (err) => {
+            console.log(err);
+        });
 
-
+    // Straight up Promise to array
+    // any[]: use array when you need to manipulate the data
+    //     this._customerService.getCustomers()
+    //     .then((customers) => this.customers = customers)
+    //     .catch((err) => {
+    //     console.log(err);
+    // });
 
     //Promise: <any[]>
     //     this.customers = this._customerService.getCustomers()
@@ -34,12 +40,12 @@ export class CustomersComponent implements OnInit {
     //     console.log(err);
     // });
 
-        //Rx Observable
-        // this.customers = this._customerService.getCustomers()
-        // .catch((err) => {
-        //     console.log(err);
-        //     return Observable.of(true);
-        // });
+    //Rx Observable
+    // this.customers = this._customerService.getCustomers()
+    // .catch((err) => {
+    //     console.log(err);
+    //     return Observable.of(true);
+    // });
 
     }
 

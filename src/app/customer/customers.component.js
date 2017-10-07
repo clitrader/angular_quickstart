@@ -17,12 +17,18 @@ var CustomersComponent = (function () {
     }
     CustomersComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // any[]: use array when you need to manipulate the data
-        this._customerService.getCustomers()
-            .then(function (customers) { return _this.customers = customers; })
-            .catch(function (err) {
+        // Rx Observable with subscribe
+        this._customerService.getCustomers_RxObservable()
+            .subscribe(function (customers) { return _this.customers = customers; }, function (err) {
             console.log(err);
         });
+        // Straight up Promise to array
+        // any[]: use array when you need to manipulate the data
+        //     this._customerService.getCustomers()
+        //     .then((customers) => this.customers = customers)
+        //     .catch((err) => {
+        //     console.log(err);
+        // });
         //Promise: <any[]>
         //     this.customers = this._customerService.getCustomers()
         //     .catch((err) => {
