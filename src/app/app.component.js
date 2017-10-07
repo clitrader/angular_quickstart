@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-// import { CustomerComponent } from './customer/customer.component';
+var customer_service_1 = require("./customer/customer.service");
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
@@ -25,6 +25,7 @@ AppComponent = __decorate([
         moduleId: module.id,
         selector: 'my-app',
         templateUrl: 'app.component.html',
+        providers: [customer_service_1.CustomerService]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

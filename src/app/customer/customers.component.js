@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var customer_service_1 = require("./customer.service");
-// import { CustomerComponent } from './../customer/customer.component';
 var core_1 = require("@angular/core");
 var CustomersComponent = (function () {
     function CustomersComponent(_customerService) {
@@ -48,7 +47,6 @@ CustomersComponent = __decorate([
         moduleId: module.id,
         selector: 'my-customers',
         templateUrl: 'customers.component.html',
-        providers: [customer_service_1.CustomerService]
     }),
     __metadata("design:paramtypes", [customer_service_1.CustomerService])
 ], CustomersComponent);
