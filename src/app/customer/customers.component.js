@@ -16,7 +16,24 @@ var CustomersComponent = (function () {
         this._customerService = _customerService;
     }
     CustomersComponent.prototype.ngOnInit = function () {
-        this.customers = this._customerService.getCustomers();
+        var _this = this;
+        // any[]: use array when you need to manipulate the data
+        this._customerService.getCustomers()
+            .then(function (customers) { return _this.customers = customers; })
+            .catch(function (err) {
+            console.log(err);
+        });
+        //Promise: <any[]>
+        //     this.customers = this._customerService.getCustomers()
+        //     .catch((err) => {
+        //     console.log(err);
+        // });
+        //Rx Observable
+        // this.customers = this._customerService.getCustomers()
+        // .catch((err) => {
+        //     console.log(err);
+        //     return Observable.of(true);
+        // });
     };
     return CustomersComponent;
 }());

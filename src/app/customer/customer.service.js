@@ -10,14 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var Rx_1 = require("rxjs/Rx");
 var CUSTOMER = 'app/customers.json';
 var CustomerService = (function () {
     function CustomerService(_http) {
         this._http = _http;
     }
     CustomerService.prototype.getCustomers = function () {
-        return this._http.get(CUSTOMER).map(function (response) { return response.json(); });
+        return this._http.get(CUSTOMER)
+            .map(function (response) { return response.json(); })
+            .toPromise()
+            .catch(function (err) {
+            console.log(err);
+            return Promise.reject(err);
+        });
+    };
+    CustomerService.prototype.getCustomers_RxObservable = function () {
+        return this._http.get(CUSTOMER)
+            .map(function (response) { return response.json(); })
+            .catch(this._handleError);
+    };
+    CustomerService.prototype._handleError = function (err) {
+        console.log(err);
+        return Rx_1.Observable.throw(err);
     };
     return CustomerService;
 }());
